@@ -1,0 +1,39 @@
+<h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">
+  Votre commande : menu
+  {{menu.name}}
+</h1>
+{{#if commandeInfo}}
+  <div class="alert alert-success mt-3" role="alert" data-test-confirmation>
+    <h4 class="alert-heading">Commande validée !</h4>
+    <dl>
+      <dt>Nom</dt>
+      <dd>{{commandeInfo.name}}</dd>
+      <dt>Adresse</dt>
+      <dd>{{commandeInfo.address}}</dd>
+      <dt>Téléphone</dt>
+      <dd>{{commandeInfo.phone}}</dd>
+    </dl>
+  </div>
+{{/if}}
+
+<form method="POST">
+  <input type="hidden" name="menuId" value="{{menu.id}}" />
+  <div class="mb-3">
+    <label for="name_input" class="form-label">Nom</label>
+    <input type="texte" name="name" class="form-control" id="name_input" />
+  </div>
+  <div class="mb-3">
+    <label for="address_input" class="form-label">Adresse</label>
+    <input
+      type="texte"
+      name="address"
+      class="form-control"
+      id="address_input"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="phone_input" class="form-label">Téléphone</label>
+    <input type="tel" name="phone" class="form-control" id="phone_input" />
+  </div>
+  <button type="submit" class="btn btn-primary">Payer</button>
+</form>

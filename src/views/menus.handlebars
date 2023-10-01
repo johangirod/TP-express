@@ -1,0 +1,18 @@
+<h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">Menus</h1>
+<p> Tous nos menus sont servis avec frites et boisson.</p>
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  {{#each menus}}
+  <div class="col" data-test-menu>
+    <div class="card h-100" role="list-item">
+      <div class="card-body">
+        <h2 class="card-title">{{name}}</h5>
+        <p class="card-text">{{description}}</p>
+        <p class="card-text">{{price}}€</p>
+      </div>
+      <div class="p-3">
+        <a href="/commander?menu={{id}}" class="btn btn-secondary">Commander</a>
+      </div>
+    </div>
+  </div>
+  {{/each}}
+</div>

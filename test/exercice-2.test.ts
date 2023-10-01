@@ -1,8 +1,12 @@
 import { JSDOM } from "jsdom";
 import { beforeAll, describe, expect, it } from "vitest";
-import menus from "../models/menus";
-import restaurant from "../models/restaurant";
+import { getAllMenus, getRestaurant } from "../src/models";
+
+const restaurant = getRestaurant();
+const menus = getAllMenus();
+
 const SERVER_HOST = "http://localhost:3000";
+
 describe("Exercice 1 - Home", () => {
   it("should use data from restaurant model for the landing page", async () => {
     const res = await fetch(`${SERVER_HOST}/`);
